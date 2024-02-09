@@ -6,7 +6,7 @@
 
 # classes Simple employee Instance variables 
 class Employee:
-    #initialise or CONSTRUCTOR 
+    #initialise or CONSTRUCTOR  Instance variables 
     
     def __init__(self, first, last, pay):
         self.first = first
