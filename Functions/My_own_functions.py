@@ -77,4 +77,19 @@ def send_email(name):
 
 greet("jon")
 
+# GLOBAL VARIABLES BEWWARE
+
+#fizz buzz
+def fizz_buzz(input):
+    if input % 3 == 0:
+        result ="Fizz"
+    else:
+        result ="buzz"
+    return result 
+ 
+
+        
+	
+print(fizz_buzz(5))
+ 
 
