@@ -1,0 +1,44 @@
+Essentials of Functions in Python
+
+1. Defining a Function:
+   - Functions in Python are defined using the 'def' keyword followed by the function name and parentheses.
+
+2. Calling a Function:
+   - Once a function is defined, it can be called by using the function name followed by parentheses.
+
+3. Function Parameters:
+   - Functions can accept parameters, which are values passed to the function when it is called.
+   - Parameters are specified within the parentheses in the function definition.
+
+4. Default Parameters:
+   - Parameters in Python functions can have default values assigned to them.
+   - Default parameters are useful when some parameters are optional and have a common default value.
+
+5. Returning Values:
+   - Functions can return values using the 'return' keyword followed by the value(s) to be returned.
+   - Multiple values can be returned as a tuple.
+
+6. Recursion:
+   - Recursion is the process of a function calling itself.
+   - Recursive functions in Python can be used to solve problems that can be broken down into smaller, similar subproblems.
+
+7. Lambda Functions:
+   - Lambda functions, also known as anonymous functions, are small, single-expression functions.
+   - They can have any number of parameters but can only have one expression.
+   - Lambda functions are defined using the 'lambda' keyword.
+
+8. Higher-order Functions:
+   - Higher-order functions are functions that can take other functions as arguments or return functions as results.
+
+9. Nested Functions:
+   - Python allows defining functions inside other functions.
+   - These nested functions are only accessible within the scope of the outer function.
+
+10. Function Annotations:
+    - Function annotations provide metadata about the types used by user-defined functions.
+    - They do not enforce type checking but provide information about the types of the function's parameters and return value.
+
+ONLINE LINKS FOR FUNCTIONS:
+
+https://www.w3schools.com/python/python_functions.asp
+https://www.w3schools.com/python/python_functions.asp
