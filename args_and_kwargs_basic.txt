@@ -1,0 +1,10 @@
+BASIC EXPLANATION 
+
+Here's a simple real life example:
+   - *args is like a magic bag where you can put any number of things without naming them.
+   - **kwargs is like a magic dictionary where you can put any number of named things and their values.
+
+
+
+YOUTUBE VIDEO 
+https://www.youtube.com/watch?v=4jBJhCaNrWU
