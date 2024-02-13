@@ -8,3 +8,4 @@ def example_function(*args, **kwargs):
 
 # Call the function with different arguments
 example_function(1, 2, 3, name='Jonathan', age=52, city='Berlin')
+#end
