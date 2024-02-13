@@ -40,4 +40,3 @@ print(emp_2.raise_amount)     # Accessing via instance
 # Static Methods
 # behave like regular fuinctions
 
-def 
