@@ -1,0 +1,14 @@
+[
+	{
+		"name": "Jonathan Davies",
+		"phone": "123456789",
+		"emails": ["joesaudi@hotmail.com", "jonathanerasmusdavies43@gmail.com"],
+		"has_license": false
+	},
+	{
+		"name": "Rachael Davies",
+		"phone": "876187628",
+		"emails": ["rd@hotmail.com", "rrr@gmail.com"],
+		"has_license": true
+	}
+]
