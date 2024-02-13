@@ -18,8 +18,31 @@ class Employee:
     
     def __repr__(self): #used for developers to see
         return "Employee('{}', '{}', {})".format(self.first, self.last, self.pay)
+    def __str__(self):
+        return '{} - {}'.format(self.fullname(), self.email)
+    def __add__(self,other):
+        return self.pay+other.pay
+    
+    
 
 emp_1 = Employee('jonathan', 'davies', 50000)
 emp_2 = Employee('peter', 'davies', 60000)
 
+print(len("peter"))
+print('peter'.__len__())
+print(len(emp_1))
+
+
+
 print(emp_1)
+print(emp_2)
+
+#special methods for maths
+print(1+2)
+print(int.__add__(1,2))
+print(str.__add__('a','b')) # you can only xconcatenate 2 strings
+
+# add two employees togethr
+
+print(emp_1 + emp_2)
+
