@@ -17,3 +17,5 @@ print(emp_1.first)
 print(emp_1.email)
 
 #corey shafer 
+'''@fullname.setter
+@fullname.deleter'''
