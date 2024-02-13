@@ -7,6 +7,7 @@ files: list = [
     os.path.join(directory, "data.txt"),
     os.path.join(directory, "data.log")
 ]
+ with open 
 
 
 
