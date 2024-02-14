@@ -1,0 +1,43 @@
+
+• Python Data Model
+• Special Method Names
+• The dir Function
+• The help Function
+• The isinstance Function
+Understanding the Python Data Model
+Under the hood of all objects in Python there are attributes and methods that aren't generally meant to be accessible at the top-level. These are usually called double underscore methods (or "dunder" methods), and they can be very useful to work with. Additionally, attributes and methods exist on objects, but documentation isn't always perfect so we need to know how to discover what a class implements and exposes. Here's vars.py from an earlier lessons, let's use this file and the User class to see how we could discover what we have access to:
+~/vars.py
+  class User: active_users = []
+def __init__(self, name, email): self.name = name
+self.email = email
+def activate(self):
+if self not in self.__class__.active_users:
+self.__class__.active_users.append(self)
+ def deactivate(self):
+if self in self.__class__.active_users:
+self.__class__.active_users.remove(self) def is_active(self):
+return self in self.__class__.active_users me = User("Keith", "keith@example.com")
+print(f"Active: {me.is_active()} Active Users: {User.active_users}") me.activate()
+print(f"Active: {me.is_active()} Active Users: {User.active_users}") me.deactivate()
+print(f"Active: {me.is_active()} Active Users: {User.active_users}")
+print(f"Active users off of `me`: {me.active_users}, Class level: {Us er.active_users}")
+me.active_users = "Just me"
+print(f"Active users off of `me`: {me.active_users}, Class level: {Us er.active_users}")
+Let's load this file into a REPL and see what we can figure out about the me variable without looking at the source code.
+$ python -i vars.py
+Active Users: []
+Active Users: [<__main__.User object at 0x1011621c0>] Active Users: []
+Active users off of `me`: [], Class level: []
+Active users off of `me`: Just me, Class level: [] >>>
+One of the best ways to see the data that an object holds is to access the __dict__ attribute. This will return a dictionary of all of the custom attributes to us:
+>>> me.__dict__
+{'name': 'Keith', 'email': 'keith@example.com', 'active_users': 'Just me'}
+Since __dict__ will only give us attribute/variables we need to find a way to discover the methods that our object has on it. To access these (and attribute names) we can use the dir function. This works for all objects too so we can even pass classes into it to see what class methods and class-level attributes exist.
+  
+ >>> dir(me)
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'activate', 'active_users', 'deactivate', 'email', 'is_active', 'name']
+>>> dir(User)
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'activate', 'active_users', 'deactivate', 'is_active']
+For all of the strings in these lists, we can chain those values off of the corresponding object. If we're trying to access a method then it will return the function so we'll still need to use parenthesis to invoke the method. There are obviously a lot of dunder methods here and when defining our own classes we can customize these to implement operators for our types or change the behavior to improve the experience of working with our types.
+Both dir and __dict__ are incredibly useful for inspecting objects and things that we should use frequently in debugging and exploring of code.
+If you're interested in documentation you can utilized the help function. If you want to know if a class is of a type or a subclass of a type then you can use the isinstance function.
