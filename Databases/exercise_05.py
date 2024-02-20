@@ -41,4 +41,4 @@ def update_name_in_csv(csv_file, row_index, new_name):
     os.replace(temp_file, csv_file)
 
 # Update the name in the 1000th row
-update_name_in_csv(csv_file, 1000, 'New Name')
+update_name_in_csv(csv_file, 1000, 'JONATHAN DAVIES')
