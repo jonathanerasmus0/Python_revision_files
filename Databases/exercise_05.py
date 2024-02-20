@@ -42,3 +42,12 @@ def update_name_in_csv(csv_file, row_index, new_name):
 
 # Update the name in the 1000th row
 update_name_in_csv(csv_file, 1000, 'JONATHAN DAVIES')
+
+
+'''PERSONAL EXPLANATION FOR REVISION :The selected code is a function that updates the name in a specific row of a CSV file. The function takes three arguments: the CSV file path, the row index (zero-based), and the new name.
+
+The function uses the csv module to read the CSV file and write to a temporary file. It loops through each row in the CSV file, checking if the current row is the specified row index. If it is, the function updates the name in the row.
+
+Finally, the function uses the os module to replace the original CSV file with the temporary file.
+
+Overall, the code is performing a simple update to a CSV file by updating a specific row. '''
