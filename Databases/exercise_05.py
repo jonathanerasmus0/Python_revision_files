@@ -15,3 +15,30 @@ Try this with different number of rows so your program can take a longer time to
 Profile the CPU usage of your computer as you run the instructions below. Keep checking on the statistics to know if the computer can really handle all this load. In Linux (and Mac), the command top can be used in the terminal to determine the CPU usage as you run scripts below.'''
 
 
+
+import csv
+
+# Define the file paths
+csv_file = 'customers.csv'
+temp_file = 'temp_customers.csv'
+
+# Function to update the name in the 1000th row
+def update_name_in_csv(csv_file, row_index, new_name):
+    # Open the original CSV file for reading and a temporary CSV file for writing
+    with open(csv_file, 'r', newline='') as file, open(temp_file, 'w', newline='') as temp:
+        reader = csv.reader(file)
+        writer = csv.writer(temp)
+
+        # Copy the contents of the original file to the temporary file
+        for index, row in enumerate(reader):
+            if index == row_index - 1:  # Adjusting for 0-based index
+                # Update the name in the 1000th row
+                row[0] = new_name
+            writer.writerow(row)
+
+    # Replace the original file with the temporary file
+    import os
+    os.replace(temp_file, csv_file)
+
+# Update the name in the 1000th row
+update_name_in_csv(csv_file, 1000, 'New Name')
