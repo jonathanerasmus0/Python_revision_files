@@ -53,3 +53,5 @@ conn.commit()
 # Closing the cursor and the connection
 cur.close()
 conn.close()
+
+

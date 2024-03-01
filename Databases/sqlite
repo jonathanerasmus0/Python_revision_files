@@ -1,0 +1,51 @@
+import sqlite3
+
+db_file: str= "test.sqlite"
+try:
+    mydbconnection = sqlite3.connect(db_file)
+except:
+        print("hey Houston you have a problem")
+else:
+    print("connection established hooray for you")
+
+create_company_table_command_j= '''
+
+CREATE TABLE IF NOT EXISTS company_j (
+    
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(255) NOT NULL,
+    age SMALLINT NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    salary NUMERIC(255) NOT NULL
+    
+    
+);
+'''
+
+
+
+
+insert_into_company_table_command_j: str ='''
+INSERT INTO company (name, age, address, email, salary)
+VALUES ('paul', 20, '16 Mullenhoff strasse', 'test@gmail.com', '900.50'),
+('jonathan', 20, '23 sd steeter strasse', 'test2@gmail.com', 11200.22);
+
+
+
+'''
+
+
+mydbconnection.execute(create_company_table_command_j)
+mydbconnection.commit()
+
+
+
+
+
+
+
+
+
+
+
